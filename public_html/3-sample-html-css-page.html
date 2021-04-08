@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Milind</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--
+        CSS can be added to HTML documents in 3 ways:
+        
+        1. Inline - by using the style attribute inside HTML elements
+        2. Internal - by using a <style> element in the <head> section
+        3. External - by using a <link> element to link to an external CSS file
+
+        -->
+
+        <!-- External calling of css -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <style>
+            /* Internal calling of css  */
+            .custom-css{
+                /* you can add property here */
+                display:block;
+                margin-top:10px;
+                padding-bottom:20px;
+            }  
+
+            /* You can use # as ID selector to add css for elements */
+            #id-selector{
+                /* you can add property here */
+                display:block;
+                margin-top:10px;
+                padding-bottom:20px;
+            }
+        </style>
+        <!-- Inline css can be added as follow by using style attribute -->
+        <!-- 
+        <div style="width:100%;margin-top:10px;"></div>
+        -->
+    </head>
+    <body>
+        <div class="header">
+            <div class="website-name">
+                <h3><a href="/workshop/html-css/public_html/3-sample-html-css-page.html">Social Network</a></h3>
+            </div>
+            <div class="navbar">
+                <a href="#" class="link">Home</a>
+                <a href="#" class="link">Login</a>
+                <a href="#" class="link">Register</a>
+            </div>
+        </div>
+        <div class="content">
+            Content can be added here
+        </div>
+        <div class="footer">
+            <div class="footer-center">
+                <p class="footer-company-about">
+                    <span>About the Social Network</span>
+                    Social Network is a Workshop website for learning.
+                </p>
+                <p class="footer-company-name">SocialNetwork &copy; 2021</p>
+            </div>
+        </div>
+    </body>
+</html>

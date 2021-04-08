@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Bootstrap Learning</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Load bootstrap's CSS in head section -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <!-- Nav bar section  -->
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">Social Network</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="1-introduction.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="2-login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="3-register.html">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class='container'>
+            <div class='row mt-5 justify-content-center'>
+                <div class='col col-3'>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Login Here</h5>
+                            <form>
+                                <div class="mb-3 mt-4">
+                                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Enter Password">
+                                </div>
+                                <div class="d-grid gap-2 mx-auto mt-3">
+                                    <button class="btn btn-primary" type="button">Login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer section  -->
+        <nav class="navbar navbar-dark bg-dark mt-5">
+            <div class="container">
+                <div class='mx-auto text-center text-white p-2'>
+                    <h4 class='mb-2'>About the Social Network</h4>
+                    <div>Social Network is a Workshop website for learning.</div>
+                    <div>SocialNetwork © 2021</div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Load bootstrap's JS just before the closing body tag -->
+        <script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    </body>
+</html>

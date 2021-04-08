@@ -1,0 +1,96 @@
+/* Internal - by using a <style> element in the <head> section */
+
+/* To remove default CSS of browser */
+body{
+    margin: 0px;
+    background:#ebeff2;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+h3{
+    margin:0px;
+}
+
+/* Removes underline */
+a{
+    text-decoration: none;
+}
+
+/* our custom css */
+.header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: white;
+    color: black;
+    position:fixed;
+    top:0;
+    width:100%;
+}
+
+/* find element with header class and then find website-name class element in that header element */
+.header .website-name{
+    margin-right:15px;
+    padding:15px;
+}
+
+/* find element with header class and then find navbar class element and then find link elements in that header element */
+.header .navbar .link{
+    padding:15px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+.header .navbar .link:hover{
+    /*border-bottom: 1px solid grey;*/
+    background:black;
+    color:white;
+    transition: 0.3s all;
+}
+
+
+/* Content CSS */
+.content{
+    padding:15px;
+    height:1000px;
+    margin-top:70px;
+}
+
+/* Footer CSS */
+.footer{
+    position: fixed;
+    bottom: 0;
+    background-color: #292c2f;
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    font-size:16px;
+    padding: 15px;
+    margin-top: 80px;
+}
+
+
+.footer .footer-center{
+    text-align:center;
+}
+
+.footer-company-name{
+    color:  white;
+    font-size: 14px;
+    font-weight: normal;
+    margin:0px;
+    margin-top: 15px;
+}
+
+.footer .footer-company-about{
+    color:  #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer .footer-company-about span{
+    display: block;
+    color:  #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
