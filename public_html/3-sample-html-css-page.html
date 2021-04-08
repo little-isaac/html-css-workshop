@@ -50,7 +50,32 @@
             </div>
         </div>
         <div class="content">
-            Content can be added here
+            <h4 class=''> 
+                Please fill below registration form
+            </h4>
+            <form action='4-form-submit.html' method="GET">
+                Email
+                <!-- 
+                every element has different attribute
+                
+                - type - input element has type attribute email,tel,date,text, checkbox, radio
+                - name  - attribute is required to retrive data at server end (ex. in php language)
+                - placeholder - attrribute is used to display data in empty state.
+                - required - you can add required attribute to make it as required field.
+                -->
+                <input type='email' name='email' placeholder='name@email.com'/>
+                <br/>
+                <br/>
+                Name
+                <input type='text' name='name' placeholder='name surname'/>
+                <br/>
+                <br/>
+                Birthdate
+                <input type='date' name='birthdate'/>
+                <br>
+                <br>
+                <button type='submit'>Submit Form</button>
+            </form>
         </div>
         <div class="footer">
             <div class="footer-center">
