@@ -15,17 +15,33 @@ and open the template in the editor.
         internal javascript
         external javascript
         -->
+        <style>
+            .hidden{
+                display:none;
+            }
+        </style>
     </head>
     <body>
-        <input type="text" class="input-field-1"  placeholder="value 1">
 
-        <input type="text" class="input-field-2" placeholder="value 2">
+        <div class="" style="margin-top:50px;">
+            <button class="toggle-button">Hide/Show element</button>
+            <div class="hide-element">
+                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+            </div>
+        </div>
+        <div class="" style="margin-top:50px;">
+            <input type="text" class="input-field-1"  placeholder="value 1">
 
-        <input type="text" class="result-field" placeholder="result">        
-        
-        
-        <div class="result">0</div>
-        <button onclick="addition()">Add</button>
+            <input type="text" class="input-field-2" placeholder="value 2">
+
+            <input type="text" class="result-field" placeholder="result">        
+
+
+            <div class="result">0</div>
+            <button onclick="addition()">Add</button>
+        </div>
+
+
         <script src="js/index.js"></script>
     </body>
 </html>
