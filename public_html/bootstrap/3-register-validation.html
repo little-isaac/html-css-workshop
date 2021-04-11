@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Bootstrap Learning</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Load bootstrap's CSS in head section -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <!-- Nav bar section  -->
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="#">Social Network</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="1-introduction.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="2-login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="3-register.html">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class='container'>
+            <div class='row mt-5 justify-content-center'>
+                <div class='col col-3'>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Register Here</h5>
+                            <form onsubmit="return formValidation(this);">
+                                <div class="mb-3 mt-4">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" name="name" class="form-control" placeholder="Milind Patel">
+                                    <div class="invalid-feedback username-invalid-feedback">
+                                    </div>
+                                </div>
+                                <div class="mb-3 mt-4">
+                                    <label class="form-label">Email address</label>
+                                    <input type="email" name="email" class="form-control"  placeholder="name@example.com">
+                                    <div class="invalid-feedback email-invalid-feedback">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Password</label>
+                                    <input type="password" name="pwd1" class="form-control" placeholder="Enter Password">
+                                    <div class="invalid-feedback pwd1-invalid-feedback">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Confirm Password</label>
+                                    <input type="password" name="pwd2" class="form-control" placeholder="Enter Password">
+                                    <div class="invalid-feedback pwd2-invalid-feedback">
+                                    </div>
+                                </div>
+                                <div class="d-grid gap-2 mx-auto mt-3">
+                                    <button class="btn btn-primary" type="submit">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer section  -->
+        <nav class="navbar navbar-dark bg-dark mt-5">
+            <div class="container">
+                <div class='mx-auto text-center text-white p-2'>
+                    <h4 class='mb-2'>About the Social Network</h4>
+                    <div>Social Network is a Workshop website for learning.</div>
+                    <div>SocialNetwork © 2021</div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Load bootstrap's JS just before the closing body tag -->
+        <script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+        <script>
+            function formValidation(form){
+                debugger;
+                var name = form.name.value;
+                var email = form.email.value;
+                var pwd1 = form.pwd1.value;
+                var pwd2 = form.pwd2.value;
+                
+                var pwdReqx = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+                var emailReqx = /^[a-zA-Z0-9.]+@[a-zA-Z0-9]+(\.[a-zA-Z]{2,})+$/;
+                
+
+                form.name.classList.remove('is-invalid');
+                form.name.classList.remove('is-valid');
+                
+                form.email.classList.remove('is-invalid');
+                form.email.classList.remove('is-valid');
+                
+                form.pwd1.classList.remove('is-invalid');
+                form.pwd1.classList.remove('is-valid');
+                
+                form.pwd2.classList.remove('is-invalid');
+                form.pwd2.classList.remove('is-valid');
+
+                // For Name
+                if(name == "") {
+                    document.querySelector('.username-invalid-feedback').innerHTML = "Username cannot be blank!";
+                    form.name.classList.add('is-invalid');
+                    return false;
+                }else{
+                    form.name.classList.add('is-valid');
+                }
+
+                // For Email
+                if(email == ""){
+                    document.querySelector('.email-invalid-feedback').innerHTML = 'Email cannot be blank!';
+                    form.email.classList.add('is-invalid');
+                    return false;
+                }else if(!emailReqx.test(email)){
+                    document.querySelector('.email-invalid-feedback').innerHTML = 'Please enter valid email address!';
+                    form.email.classList.add('is-invalid');
+                    return false;
+                }else{
+                    form.email.classList.add('is-valid');
+                }
+
+                //For Password
+                if(pwd1 == ""){
+                    document.querySelector('.pwd1-invalid-feedback').innerHTML = 'Password cannot be blank!';
+                    form.pwd1.classList.add('is-invalid');
+                    return false;
+                }else if(!pwdReqx.test(pwd1)){
+                    document.querySelector('.pwd1-invalid-feedback').innerHTML = "Passwords must contain at least eight characters, including uppercase, lowercase letters and numbers.";
+                    form.pwd1.classList.add('is-invalid');
+                    return false;
+                }else{
+                    form.pwd1.classList.add('is-valid');
+                    if(pwd1 !== pwd2){
+                        document.querySelector('.pwd2-invalid-feedback').innerHTML = "The password and confirmation password do not match.";
+                        form.pwd2.classList.add('is-invalid');
+                        return false;
+                    }else{
+                        form.pwd2.classList.add('is-valid');
+                    }
+                }
+                return true;
+            }
+        </script>
+
+    </body>
+</html>
