@@ -11,12 +11,22 @@ function validate(form) {
     form.password.classList.remove("is-invalid");
     form.confirm_password.classList.remove("is-invalid");
 
+    var usernamePatt = /^[a-zA-Z _-]+$/g;
+    var passwordPatt = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+
     if (usernameValue == "") {
         form.username.classList.add("is-invalid");
         document.querySelector('.username-error-div').innerHTML = 'Please Enter username First';
         return false;
     } else {
-        form.username.classList.add("is-valid");
+        if (!usernamePatt.test(usernameValue)) {
+            form.username.classList.add("is-invalid");
+            document.querySelector('.username-error-div').innerHTML = 'Enter Valid Username';
+            return false;
+        } else {
+            form.username.classList.add("is-valid");
+        }
+
     }
 
     if (emailaddressValue == "") {
@@ -29,6 +39,14 @@ function validate(form) {
         form.password.classList.add("is-invalid");
         document.querySelector('.password-error-div').innerHTML = 'Please Enter password First';
         return false;
+    } else {
+        if (!passwordPatt.test(passwordValue)) {
+            form.password.classList.add("is-invalid");
+            document.querySelector('.password-error-div').innerHTML = 'Passwords must contain at least eight characters, including uppercase, lowercase letters and numbers.';
+            return false;
+        } else {
+            form.password.classList.add("is-valid");
+        }
     }
 
     if (confirm_passwordValue == "") {
